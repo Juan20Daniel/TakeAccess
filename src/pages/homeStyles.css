@@ -1,0 +1,89 @@
+.home-container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    min-width: 32rem;
+    background: linear-gradient(236.59deg, #FFFFFF 14.06%, #B85800 100%);
+    padding-bottom: 3rem;
+}
+.boxNote {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.alin-note {
+    width: 100%;
+    max-width: 100rem;
+    margin: 10rem 2.3rem 2rem;
+}
+.title-home {
+    font-size: 2rem;
+    text-align: start;
+    margin-bottom: 10px;
+    margin-left: 2rem;
+}
+.note {
+    max-width: 50rem;
+    font-size: 1.5rem;
+    color: rgb(68, 68, 68);
+    user-select: none;
+    margin-bottom: 10px;
+    margin-left: 2rem;
+}
+.note span {
+    font-weight: bold;
+}
+.boxTitleManual {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.aling-title {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 3rem
+}
+.titleManual {
+    font-size: 1.5rem;
+    color: #0E4A82;
+    text-decoration: underline;
+    margin: 2rem 0 2rem 3rem;
+    user-select: none;
+}
+.textGoTo {
+    font-size: 1.2rem;
+}
+.linkToAlgebraix {
+    color: #1960CA;
+    margin-left: 0.5rem;
+    background: none;
+    border: none;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.textInitsession {
+    font-size: 1.2rem;
+}
+.loginAlgebraix, .cambContra {
+    margin-top: 1rem;
+    width: 100%;
+    object-fit: cover;
+    border: 0.1rem solid rgba(80, 80, 80, 0.568);
+}
+@media(min-width: 500px) {
+    .titleManual, .textGoTo, .linkToAlgebraix, .textInitsession {
+        font-size: 2rem;
+    }
+    .textInitsession {
+        padding-right: 2rem;
+    }
+    .sectionTree {
+        display: flex;
+        margin-top: 0;
+    }
+    .cambContra {
+        padding: 3rem;
+        width: 50%;
+        margin-top: 0;
+    }
+}

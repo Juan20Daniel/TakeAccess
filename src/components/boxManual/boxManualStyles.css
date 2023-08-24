@@ -1,0 +1,105 @@
+.sections {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+.section {
+    width: 100%;
+    min-width: 27.4rem;
+    max-width: 1000px;
+    background-color: #fff;
+    margin: 0 3rem;
+    padding: 2rem 2rem;
+    border-radius: 2.5rem;
+    box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.568);
+}
+.header-section {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 4rem 1fr;
+    align-items: center;
+    padding-bottom: 1rem;
+    border-bottom: 0.1rem solid #B85800;
+    margin-bottom: 2rem;
+}
+.circle {
+    width: 4rem;
+    height: 4rem;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 0.8rem solid #B85800;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.num {
+    font-size: 1.5rem;
+    font-weight: bold;
+    user-select: none;
+}
+.titleSection {
+    margin-left: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    user-select: none;
+}
+@media(min-width: 500px) {
+    .section {
+        padding: 2rem 3rem;
+    }
+    .header-section {
+        grid-template-columns: 5rem 1fr;
+    }
+    .circle {
+        width: 5rem;
+        height: 5rem;
+    }
+    .num {
+        font-size: 1.9rem;
+    }
+    .titleSection {
+        margin-left: 1.7rem;
+        font-size: 2rem;
+        font-weight: bold;
+    }
+}
+@media(min-width: 600px) {
+    .section {
+        padding: 2rem 4rem;
+    }
+}
+@media(min-width: 750px) {
+    .section {
+        padding: 2rem 4rem;
+    }
+    .header-section {
+        grid-template-columns: 6rem 1fr;
+    }
+    .circle {
+        width: 6rem;
+        height: 6rem;
+    }
+    .num {
+        font-size: 3rem;
+    }
+    .titleSection {
+        margin-left: 2rem;
+        font-size: 2.5rem;
+        font-weight: bold;
+    }
+}
+/*
+@media(min-width: 950px) {
+    .box-consultAccess {
+        display: grid;
+        grid-template-columns: 50rem 1fr;
+        margin: 3rem auto;
+    }
+    .takeaccess {
+        padding: 5rem 2.5rem 5rem 0;
+        height: 100%;
+        display: grid;
+        align-content: center;
+    }
+} */
