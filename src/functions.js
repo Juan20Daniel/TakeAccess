@@ -3,9 +3,9 @@ import { defected } from './cripter';
 import CryptoJS from 'crypto-js';
 const secretPass = "XkhZG4fW2t2W";
 
-export function searchCurp(curp) {
-    const codeCurp = md5(curp);
-    const resultCurp = defected.filter(item => item.regexr === codeCurp);
+export function searchMatric(matric) {
+    const codeMatric = md5(matric);
+    const resultCurp = defected.filter(item => item.regexr === codeMatric);
     const result = decodeDefected(resultCurp);
     return result;
 }
@@ -15,7 +15,9 @@ function decodeDefected(value) {
         decodeDefect = [ ...decodeDefect,
             {
                 nombre:decode(value[i].unity),
+                apellidos:decode(value[i].fall),
                 grupo:decode(value[i].deg),
+                carrera:decode(value[i].soo),
                 userName:decode(value[i].remove),
             }
         ]

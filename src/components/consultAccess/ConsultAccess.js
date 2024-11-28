@@ -1,29 +1,26 @@
 import { useState } from 'react';
 import './consultAccessStyles.css';
-import { searchCurp } from '../../functions';
+import { searchMatric } from '../../functions';
 import iconBack from '../../assets/iconBack.png';
 import Results from '../results/Results';
 const ConsultAccess = ({ setAlert }) => {
-    const [ curpToSearch, setCurpToSearch ] = useState({ value:'', valid:null });
+    const [ matrincToSearch, setMatrincToSearch ] = useState({ value:'', valid:null });
     const [ ids, setIds ] = useState([]);
     const handleChange = e => {
-        const valueCurp = e.target.value.toUpperCase();
-        const resetValue = valueCurp.replace(/\s+/g, "");
-        setCurpToSearch({...curpToSearch, value:resetValue});
+        const valueInput = e.target.value.replace(/\s+/g, "");
+        setMatrincToSearch({...matrincToSearch, value:valueInput});
     }
     const searchAccess = () => {
-        if(/^[a-zA-Z0-9]{18}$/.test(curpToSearch.value)) {
-            setCurpToSearch({ ...curpToSearch, valid:'correct' });
-            const resultToSearch = searchCurp(curpToSearch.value);
-            if(resultToSearch.length > 0) {
-                setIds(resultToSearch);
-            } else {
-                setAlert({ visible:true, message:"No se encontraron resultados de tu curp"});
-            }
-        } else {
-            setCurpToSearch({ ...curpToSearch, valid:'incorrect' });
-            setAlert({ visible:true, message:"La curp no es válida"});
+        if(!/^[0-9]{7}$/.test(matrincToSearch.value)) {
+            setMatrincToSearch({ ...matrincToSearch, valid:'incorrect' });
+            return setAlert({ visible:true, message:"La matrícula no es válida"});
         }
+        setMatrincToSearch({ ...matrincToSearch, valid:'correct' });
+        const resultToSearch = searchMatric(matrincToSearch.value);
+        if(resultToSearch.length === 0) {
+            return setAlert({ visible:true, message:"No se encontraron resultados de tu matrícula"});
+        }
+        setIds(resultToSearch);
     }
     const handleToBack = () => {
         setIds([]);
@@ -31,13 +28,12 @@ const ConsultAccess = ({ setAlert }) => {
     return (
         <div className='consultAccess'>
             <div className='box-consultAccess'>
-                <div className='ilustration'></div>
                 {ids.length !== 0 ?
                     <div className='boxResultAccess'>
                         <button onClick={handleToBack} className="btnBack">
                             <img src={iconBack} alt="icon de volver" />
                         </button>
-                        <p className='name'>Hola: {ids[0].nombre}</p>
+                        <p className='name'>{ids[0].nombre} {ids[0].apellidos}</p>
                         <p className='titleResults'>Tu acceso a Algebraix</p>
                         <div className='resultAcces'>
                             {ids.map((item, index) => {
@@ -48,24 +44,20 @@ const ConsultAccess = ({ setAlert }) => {
                     :
                     <div className='takeaccess'>
                         <p className='title'>Busca tu acceso al portal.</p>
-                        <div className={`input-group ${curpToSearch.valid === "incorrect" && "error"}`}>
+                        <div className={`input-group ${matrincToSearch.valid === "incorrect" && "error"}`}>
                             <input
                                 type="text"
                                 id="getAccess"
-                                value={curpToSearch.value}
+                                value={matrincToSearch.value}
                                 placeholder=' '
                                 onChange={handleChange}
                             />
-                            <label htmlFor='getAccess' className={`label ${curpToSearch.valid === "incorrect" && "labelErr"}`}>
-                                Ingresa tu curp
+                            <label htmlFor='getAccess' className={`label ${matrincToSearch.valid === "incorrect" && "labelErr"}`}>
+                                Matrícula
                             </label>
-                            <p className="count">{curpToSearch.value.length}/18</p>
+                            <p className="count">{matrincToSearch.value.length}/7</p>
                             <button className='btnSearch' onClick={searchAccess}>Buscar</button>
                         </div>
-                        <p className='pageConsultCurp'>
-                            ¿No te sabes tu curp?
-                            <button className='btnConsultCurp' onClick={()=> window.open("https://www.gob.mx/curp/", "_blank")}>consulta la aquí.</button>
-                        </p>
                     </div>
                 }
             </div>

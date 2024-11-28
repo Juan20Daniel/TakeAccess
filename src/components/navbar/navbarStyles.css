@@ -6,7 +6,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 0.4rem 7px gray;
+    box-shadow: 0 0.4rem 7px rgba(0, 0, 0, 0.041);
 }
 .box-navbar {
     max-width: 1000px;
@@ -14,7 +14,7 @@
     margin: 0 3rem;
 }
 .imgLogo {
-    width: 15rem;
+    width: 17rem;
     height: 5.5rem;
     pointer-events: none;
 }

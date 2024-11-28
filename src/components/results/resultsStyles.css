@@ -1,15 +1,12 @@
 .content-results {
-    border-bottom: 0.1rem solid #B85800;
+    border-bottom: 0.1rem solid #1A66AC;
     padding: 2rem 0;
 }
-.group-student {
-    font-size: 1.5rem;
+.section {
+    margin-bottom: 1rem;
 }
-.resultTitle {
-    margin: 2rem 0 0 0;
-    font-size: 2rem;
-    font-weight: bold;
-    color: #B85800;
+.section, .group-student {
+    font-size: 1.5rem;
 }
 .result {
     margin-top: 2rem;

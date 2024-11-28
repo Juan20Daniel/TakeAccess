@@ -3,7 +3,7 @@
     width: 100%;
     min-height: 100vh;
     min-width: 32rem;
-    background: linear-gradient(236.59deg, #FFFFFF 14.06%, #B85800 100%);
+    background: #ffffff;
     padding-bottom: 3rem;
 }
 .boxNote {
@@ -23,12 +23,14 @@
     margin-left: 2rem;
 }
 .note {
-    max-width: 50rem;
-    font-size: 1.5rem;
+    max-width: 80rem;
+    font-weight: 300;
+    font-size: 2rem;
     color: rgb(68, 68, 68);
     user-select: none;
     margin-bottom: 10px;
     margin-left: 2rem;
+    line-height: 3rem;
 }
 .note span {
     font-weight: bold;
@@ -46,9 +48,19 @@
 .titleManual {
     font-size: 1.5rem;
     color: #0E4A82;
-    text-decoration: underline;
-    margin: 2rem 0 2rem 3rem;
+    margin: 0rem 0rem 2rem 2rem;
     user-select: none;
+}
+.step-one-section p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+.step-one-section figure img {
+    width: 100%;
+    border-radius: 1rem;
+}
+.step-two-description {
+    font-size: 1.2rem;
 }
 .textGoTo {
     font-size: 1.2rem;
@@ -64,13 +76,24 @@
 .textInitsession {
     font-size: 1.2rem;
 }
-.loginAlgebraix, .cambContra {
+.loginAlgebraix, .closeAnun, .cambContra {
     margin-top: 1rem;
     width: 100%;
     object-fit: cover;
     border: 0.1rem solid rgba(80, 80, 80, 0.568);
 }
 @media(min-width: 500px) {
+    .step-one-section p {
+        max-width: 45rem;
+        font-size: 2rem;
+    }
+    .step-two-description {
+        font-size: 2rem;
+    }
+    .step-one-section {
+        display: flex;
+        justify-content: space-between;
+    }
     .titleManual, .textGoTo, .linkToAlgebraix, .textInitsession {
         font-size: 2rem;
     }
@@ -81,7 +104,7 @@
         display: flex;
         margin-top: 0;
     }
-    .cambContra {
+    .closeAnun, .cambContra {
         padding: 3rem;
         width: 50%;
         margin-top: 0;

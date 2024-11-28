@@ -9,8 +9,8 @@ const Alert = ({ alert, setAlert }) => {
                     <div className="center">
                         <p className='titleAlert'>{alert.message}</p>
                         <ul>
-                            <li>Asegúrate de colocar los 18 dígitos de tu curp.</li>
-                            <li>Coloca solo números y letras.</li>
+                            <li>Asegúrate de colocar los 7 dígitos de tu matrícula.</li>
+                            <li>Coloca solo números.</li>
                             <li>Verifica que está correctamente escrita.</li>
                             <li>O ponten en contacto con el departamento de sistemas de Itecce.</li>
                         </ul>

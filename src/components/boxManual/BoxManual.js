@@ -2,8 +2,8 @@ import './boxManualStyles.css';
 
 const BoxManual = ({ num, title, children }) => {
     return (
-        <div className='sections'>
-            <div className='section'>
+        <section>
+            <div className='section__box'>
                 <div className='header-section'>
                     <div className='circle'>
                         <p className='num'>{num}</p>
@@ -12,7 +12,7 @@ const BoxManual = ({ num, title, children }) => {
                 </div>
                 {children}
             </div>
-        </div>
+        </section>
     );
 }
 export default BoxManual;
